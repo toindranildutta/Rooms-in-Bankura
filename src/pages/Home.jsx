@@ -4,6 +4,7 @@ import { Container, Logo, RoomCard } from '../components'
 import indranil from '../assets/teams/indranil.jpeg'
 import gopi from  '../assets/teams/gopi.jpg'
 import mrinmoy from  '../assets/teams/mrinmoy.jpg'
+import { Link } from 'react-router-dom';
 const Home = () => {
   const [rooms, setRooms] = useState([]);
 
@@ -75,19 +76,19 @@ const Home = () => {
               Browse Listings to Find Your Perfect Sanctuary, And Join Our Community. Contribute by Adding More Rooms.
             </p>
             <div className="flex items-center">
-              <a
-                href="/login"
+              <Link
+                to="/login"
                 className="inline-flex items-center justify-center h-12 px-6 mr-6 text-lg font-medium tracking-wide text-white transition duration-200 rounded outline outline-1 shadow-sm  shadow-blue-500 bg-blue-500  hover:bg-white hover:text-blue-500 focus:shadow-outline focus:outline-none"
               >
                 Get started
-              </a>
-              <a
-                href="/contact-us"
+              </Link>
+              <Link
+                to="/contact-us"
                 aria-label=""
                 className="inline-flex items-center font-semibold text-gray-800 transition-colors duration-200 hover:text-deep-purple-accent-700"
               >
                 Learn more
-              </a>
+              </Link>
             </div>
           </div>
         </div>
