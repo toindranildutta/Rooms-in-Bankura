@@ -12,16 +12,17 @@ export class AuthService {
         this.account = new Account(this.client);
     }
 
+   
     async createAccount({email, password, name}) {
         try {
             const userAccount = await this.account.create(ID.unique(), email, password, name);
+            
             if (userAccount){
                 // call a method
                 return this.login({email, password});
             } else {
                 return userAccount;
             }
-            
         } catch (error) {
             console.log(error);
             throw error;
@@ -29,14 +30,21 @@ export class AuthService {
 
     }
 
+    async createVerification() {
+        alert("Verification mail sent");
+        return await this.account.createVerification('https://rooms-in-bankura.vercel.app');
+    }
+
     async login({email, password}) {
         try {
+       
             return await this.account.createEmailSession(email, password);
         } catch (error) {
             console.log(error);
             throw error;
         }
     }
+
 
     async getCurrentUser() {
         try {

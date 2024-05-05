@@ -17,6 +17,7 @@ import ContactUs from './pages/ContactUs.jsx'
 
 
 
+
 const router = createBrowserRouter([
   { 
     path: '/',
@@ -73,7 +74,7 @@ const router = createBrowserRouter([
         path: "/rooms/:slug",
         element: <Post />,
     },
-    ,
+   
     {
         path: "/rooms-map",
         element: <RoomMap />,

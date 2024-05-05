@@ -8,6 +8,7 @@ import { MapContainer, TileLayer, useMapEvent } from "react-leaflet";
 import 'leaflet/dist/leaflet.css'
 import LocationFinder from "../LocationFinder";
 
+
 export default function RoomForm({ post }) {
 
     const [selectedPosition, setSelectedPosition] = useState(null);
@@ -151,8 +152,9 @@ export default function RoomForm({ post }) {
                     </label>
                 </div>
 
+                    
 
-                <RTE label="Content :" name="roomdetails" control={control} defaultValue={getValues("roomdetails")} />
+                <RTE label="Content :" name="roomdetails" defaultValue={getValues("roomdetails")} control={control} />
             </div>
 
             {/* Right Hand Side */}
