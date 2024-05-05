@@ -17,7 +17,7 @@ const Home = () => {
   const userData = useSelector((state) => state.auth.userData);
 
   useEffect(() => {
-    if(!userData.emailVerification){
+    if(!userData?.emailVerification){
       authService.account.updateVerification(userId, secret).then(() => {
       console.log('verified')
     }).catch((error) => {
