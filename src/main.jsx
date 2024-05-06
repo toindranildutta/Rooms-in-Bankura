@@ -14,6 +14,7 @@ import EditRoom from './pages/EditRoom.jsx'
 import { Login , Signup } from './components'
 import RoomMap from './components/RoomMap.jsx'
 import ContactUs from './pages/ContactUs.jsx'
+import Verify from './pages/Verify.jsx'
 
 
 
@@ -74,7 +75,9 @@ const router = createBrowserRouter([
         path: "/rooms/:slug",
         element: <Post />,
     },
-   
+       { path: "/verify",
+        element: <Verify />
+    },
     {
         path: "/rooms-map",
         element: <RoomMap />,

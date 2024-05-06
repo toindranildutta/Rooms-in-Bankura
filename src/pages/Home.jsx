@@ -6,24 +6,10 @@ import gopi from  '../assets/teams/gopi.jpg'
 import mrinmoy from  '../assets/teams/mrinmoy.jpg'
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import authService from '../appwrite/auth';
 const Home = () => {
+
   const [rooms, setRooms] = useState([]);
-
-  const urlParams = new URLSearchParams(window.location.search);
-  const userId = urlParams.get('userid');
-  const secret = urlParams.get('secret');
-
   const userData = useSelector((state) => state.auth.userData);
-
-  useEffect(() => {
-    if(!userData?.emailVerification){
-      authService.account.updateVerification(userId, secret).then(() => {
-      console.log('verified')
-    }).catch((error) => {
-      console.log("Verification failed" + error)
-    });
-  }},[userId, secret])
 
   useEffect(() => {
     appwriteService.getListings().then((data) => {
