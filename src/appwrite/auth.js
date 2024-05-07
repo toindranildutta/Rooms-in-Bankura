@@ -32,7 +32,7 @@ export class AuthService {
 
     async createVerification() {
         alert("Verification mail sent");
-        return await this.account.createVerification('https://rooms-in-bankura.vercel.app/verify');
+        return await this.account.createVerification('http://rooms-in-bankura.vercel.app/verify?');
     }
 
     async login({email, password}) {
