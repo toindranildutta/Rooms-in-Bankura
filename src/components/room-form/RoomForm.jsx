@@ -8,7 +8,6 @@ import { MapContainer, TileLayer, useMapEvent } from "react-leaflet";
 import 'leaflet/dist/leaflet.css'
 import LocationFinder from "../LocationFinder";
 
-
 export default function RoomForm({ post }) {
 
     const [selectedPosition, setSelectedPosition] = useState(null);
@@ -25,6 +24,7 @@ export default function RoomForm({ post }) {
             roomdetails: post?.roomdetails || "",
             latitude: post?.latitude || selectedPosition?.lat || "",
             longitude: post?.longitude || selectedPosition?.lng || "",
+            location: post?.location || "",
         },
     });
     const navigate = useNavigate();
@@ -101,7 +101,6 @@ export default function RoomForm({ post }) {
 
 
 
-
     return (
         <form onSubmit={handleSubmit(submit)} className="flex flex-wrap">
             {/* Left Hand Side */}
@@ -113,8 +112,8 @@ export default function RoomForm({ post }) {
                     {...register("roomname", { required: true })}
                 />
                 <Input
-                    label="Slug :"
-                    placeholder="Slug"
+                    label="URL :"
+                    placeholder="link for the room"
                     className="mb-4"
                     {...register("slug", { required: true })}
                     onInput={(e) => {
@@ -152,9 +151,8 @@ export default function RoomForm({ post }) {
                     </label>
                 </div>
 
-                    
 
-                <RTE label="Content :" name="roomdetails" defaultValue={getValues("roomdetails")} control={control} />
+                <RTE label="Content :" name="roomdetails" control={control} defaultValue={getValues("roomdetails")} />
             </div>
 
             {/* Right Hand Side */}
@@ -163,9 +161,15 @@ export default function RoomForm({ post }) {
                 {/* Map Input Start */}
                 <div>
                     <Input
+                        label="Location :"
+                        placeholder="Location Details"
+                        className="mb-4 "
+                        {...register("location", { required: true })}
+                    />
+                    <Input
                         type="value"
                         label="Latitude"
-                        placeholder="Latitude"
+                        placeholder="Latitude : Click on Map to Add"
                         className="w-full mb-4"
                         {...register("latitude", { required: true })}
 
@@ -174,7 +178,7 @@ export default function RoomForm({ post }) {
                     <Input
                         type="value"
                         label="Longitude"
-                        placeholder="Longitude"
+                        placeholder="Longitude : Click on Map to Add"
                         className="w-full mb-4"
                         {...register("longitude", { required: true })}
 

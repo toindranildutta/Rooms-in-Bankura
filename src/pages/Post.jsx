@@ -82,9 +82,13 @@ export default function Post() {
       
             {/* Description */}
             <div className="mb-6">
-              <h1 className="text-2xl font-bold">{post.title}</h1>
+              <h1 className="text-2xl font-bold">{post.roomname}</h1>
+              <p className="text-sm text-gray-500">Location : {post.location}</p>
+              <p className="text-xs text-gray-500">Added by {post.username}</p>
             </div>
-            <div className="browser-css bg-zinc-50 p-10 shadow-md shadow-black/10 rounded-sm">{parse(post.roomdetails)}</div>
+           
+            <div className="browser-css bg-zinc-50 p-10 shadow-md shadow-black/10 rounded-sm">{parse(post.roomdetails)}
+            </div>
           </Container>
         </div>
       ) : null;
