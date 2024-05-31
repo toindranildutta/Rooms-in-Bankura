@@ -1,5 +1,8 @@
 {
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" },
-  { "source": "/verify?:match", "destination": "/verify?:match" }]
+  "rewrites": [
+    { "source": "/verify", "destination": "/verify" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
 }
+
   
