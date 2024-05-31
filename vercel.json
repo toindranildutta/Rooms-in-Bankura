@@ -1,6 +1,6 @@
 {
   "rewrites": [
-    { "source": "/verify", "destination": "/verify" },
+    { "source": "/verify/(.*)", "destination": "/verify/(.*)" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
