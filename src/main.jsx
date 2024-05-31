@@ -54,15 +54,6 @@ const router = createBrowserRouter([
                 ),
             },
             {
-                path: "/verify",
-                element: (
-                    <Protected authentication={false}>
-                        {" "}
-                        <Verify />
-                    </Protected>
-                ),
-            },
-            {
                 path: "/add-listing",
                 element: (
                     <Protected authentication={true}>
@@ -84,7 +75,10 @@ const router = createBrowserRouter([
                 path: "/rooms/:slug",
                 element: <Post />,
             },
-            
+            {
+                path: "/verify/:param",
+                element: <Verify />,
+            },
             {
                 path: "/rooms-map",
                 element: <RoomMap />,

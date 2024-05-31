@@ -27,7 +27,8 @@ const Verify = () => {
   }, [])
 
   const handleNavigate = () => {
-    navigate("/")
+    if(isVerified)
+      navigate("/")
   }
 
   return (
