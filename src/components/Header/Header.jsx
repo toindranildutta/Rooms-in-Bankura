@@ -50,7 +50,7 @@ const Header = () => {
                 <nav className='flex mr-auto'>
                     <div className=' w-auto'>
                         <Link to='/'>
-                            <Logo width='150px' />
+                            <Logo width='200px' />
                         </Link>
                     </div>
 

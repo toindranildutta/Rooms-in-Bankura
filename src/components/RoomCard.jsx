@@ -2,7 +2,7 @@ import React from 'react'
 import appwriteService from '../appwrite/config';
 import { Link } from 'react-router-dom';
 
-const RoomCard = ({ $id, roomname, featuredimage, username }) => {
+const RoomCard = ({ $id, roomname, featuredimage, username, location }) => {
     return (
         <Link to={`/rooms/${$id}`}>
             
@@ -21,6 +21,8 @@ const RoomCard = ({ $id, roomname, featuredimage, username }) => {
                     <div className="flex flex-row justify-between">
                         <div className="flex flex-col pt-4">
                             <span className="text-base font-bold">{roomname}</span>
+                            <p className="text-sm text-gray">{location}
+                            </p>
                             <p className="text-xs text-gray">Added By {username}
                             </p>
                         </div>
