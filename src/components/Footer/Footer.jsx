@@ -28,7 +28,7 @@ const Footer = () => {
                                 <li className="mb-4">
                                     <Link
                                         className=" text-base font-medium text-gray-900 hover:text-gray-700"
-                                        to="/"
+                                        to="https://appwrite.io/" target="_blank"
                                     >
                                         Appwrite
                                     </Link>
@@ -37,7 +37,7 @@ const Footer = () => {
                                 <li className="mb-4">
                                     <Link
                                         className=" text-base font-medium text-gray-900 hover:text-gray-700"
-                                        to="/"
+                                        to="https://github.com/toindranildutta/Rooms-in-Bankura" target="_blank"
                                     >
                                         Helping Hands
                                     </Link>
@@ -55,7 +55,7 @@ const Footer = () => {
                                 <li className="mb-4">
                                     <Link
                                         className=" text-base font-medium text-gray-900 hover:text-gray-700"
-                                        to="/"
+                                        to="https://github.com/toindranildutta/Rooms-in-Bankura" target="_blank"
                                     >
                                         Dev Team
                                     </Link>
@@ -64,7 +64,7 @@ const Footer = () => {
                                 <li className="mb-4">
                                     <Link
                                         className=" text-base font-medium text-gray-900 hover:text-gray-700"
-                                        to="/"
+                                        to="https://github.com/toindranildutta/Rooms-in-Bankura" target="_blank"
                                     >
                                         Contact Us
                                     </Link>
@@ -82,7 +82,7 @@ const Footer = () => {
                                 <li className="mb-4">
                                     <Link
                                         className=" text-base font-medium text-gray-900 hover:text-gray-700"
-                                        to="/"
+                                        to="https://github.com/toindranildutta/Rooms-in-Bankura" target="_blank"
                                     >
                                         Terms &amp; Conditions
                                     </Link>
@@ -90,7 +90,7 @@ const Footer = () => {
                                 <li className="mb-4">
                                     <Link
                                         className=" text-base font-medium text-gray-900 hover:text-gray-700"
-                                        to="/"
+                                        to="https://github.com/toindranildutta/Rooms-in-Bankura" target="_blank"
                                     >
                                         Privacy Policy
                                     </Link>
