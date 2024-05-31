@@ -15,7 +15,7 @@ export class Service {
         this.bucket = new Storage(this.client);
     }
 
-    async createListing({roomname, slug, roomdetails, featuredimage, status, userid, latitude, longitude, username}) {
+    async createListing({roomname, slug, roomdetails, featuredimage, status, userid, latitude, longitude, location, username}) {
         try {
             return await this.databases.createDocument(
                 conf.appwriteDatabaseId,
@@ -29,6 +29,7 @@ export class Service {
                     userid,
                     latitude,
                     longitude,
+                    location,
                     username
                 }
             )
@@ -37,7 +38,7 @@ export class Service {
         }
     }
 
-    async updateListing(slug, {roomname, roomdetails, featuredimage, status, latitude, longitude}) {
+    async updateListing(slug, {roomname, roomdetails, featuredimage, status, latitude, longitude, location}) {
         try {
             return await this.databases.updateDocument(
                 conf.appwriteDatabaseId,
@@ -49,7 +50,8 @@ export class Service {
                     featuredimage,
                     status,
                     latitude,
-                    longitude
+                    longitude,
+                    location
                 }
             )
         } catch (error) {
@@ -90,6 +92,21 @@ export class Service {
                 conf.appwriteDatabaseId,
                 conf.appwriteCollectionId,
                 queries
+            )
+        } catch (error) {
+            console.log("Appwrite :: getListings :: error", error);
+            return false;
+        }
+    }
+
+    async searchListings(location) {
+        try {
+            return await this.databases.listDocuments(
+                conf.appwriteDatabaseId,
+                conf.appwriteCollectionId,
+                [Query.search("location", location),
+                Query.equal("status", "active")
+                ]
             )
         } catch (error) {
             console.log("Appwrite :: getListings :: error", error);
