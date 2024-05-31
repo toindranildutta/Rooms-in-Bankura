@@ -12,10 +12,6 @@ const Verify = () => {
   const userData = useSelector((state) => state.auth.userData);
 
   const navigate = useNavigate();
-  console.log(userData)
-  console.log(userId)
-  console.log(secret)
-
   useEffect(() => {
     if (!userData?.emailVerification) {
       authService.account.updateVerification(userId, secret).then(() => {
@@ -27,7 +23,6 @@ const Verify = () => {
   }, [])
 
   const handleNavigate = () => {
-    if(isVerified)
       navigate("/")
   }
 

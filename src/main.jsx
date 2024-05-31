@@ -76,7 +76,7 @@ const router = createBrowserRouter([
                 element: <Post />,
             },
             {
-                path: "/verify/:param",
+                path: "/verify",
                 element: <Verify />,
             },
             {
